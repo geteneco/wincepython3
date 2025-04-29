@@ -25,6 +25,7 @@ jobs:
         cd cpython
         wget https://git.savannah.gnu.org/cgit/config.git/plain/config.sub -O config.sub
         wget https://git.savannah.gnu.org/cgit/config.git/plain/config.guess -O config.guess
+        git stash
         git checkout 3.12
         ./configure --host=arm-wince --build=x86_64-linux-gnu
         make CROSS_COMPILE=arm-wince-
