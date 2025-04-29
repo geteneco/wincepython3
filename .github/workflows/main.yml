@@ -17,6 +17,7 @@ jobs:
       run: |
         sudo apt-get update
         python3 --version
+        sudo remove python3.12.3 && sudo apt-get install python3.8
         sudo apt-get install mingw-w64
 
     - name: Build Python
