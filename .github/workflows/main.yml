@@ -16,7 +16,8 @@ jobs:
     - name: Setup ARM-WinCE toolchain
       run: |
         sudo apt-get update
-        sudo apt-get install mingw-w64 
+        python3 --version
+        sudo apt-get install mingw-w64 y8677456453424367876y5tre 
         curl https://pyenv.run | bash
         exec $SHELL
         pyenv install 3.8.20
