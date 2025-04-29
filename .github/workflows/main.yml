@@ -21,7 +21,7 @@ jobs:
 
     - name: Build Python
       run: |
-        git clone https://github.com/python/cpython.git
+        git clone https://github.com/python/cpython.git # j
         cd cpython
         wget https://git.savannah.gnu.org/cgit/config.git/plain/config.sub -O config.sub
         wget https://git.savannah.gnu.org/cgit/config.git/plain/config.guess -O config.guess
