@@ -1,0 +1,27 @@
+name: Build Python3 for Windows CE
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v3
+
+    - name: Setup ARM-WinCE toolchain
+      run: |
+        sudo apt-get update
+        sudo apt-get install gcc-arm-wince # ←存在しなければ自前でビルド or curl
+
+    - name: Build Python
+      run: |
+        git clone https://github.com/python/cpython.git
+        cd cpython
+        git checkout 3.8
+        ./configure --host=arm-wince --disable-ipv6 --without-threads
+        make CROSS_COMPILE=arm-wince-
