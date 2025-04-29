@@ -17,16 +17,12 @@ jobs:
       run: |
         sudo apt-get update
         python3 --version
-        sudo apt-get install mingw-w64 y8677456453424367876y5tre 
-        curl https://pyenv.run | bash
-        exec $SHELL
-        pyenv install 3.8.20
-        pyenv global 3.8.20
+        sudo apt-get install mingw-w64
 
     - name: Build Python
       run: |
         git clone https://github.com/python/cpython.git
         cd cpython
-        git checkout 3.8
+        git checkout 3.12.3
         ./configure --host=arm-wince --build=x86_64-linux-gnu
         make CROSS_COMPILE=arm-wince-
