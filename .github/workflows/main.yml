@@ -24,6 +24,6 @@ jobs:
       run: |
         git clone https://github.com/python/cpython.git
         cd cpython
-        git checkout 3.12
+        git checkout 3.8
         ./configure --host=arm-wince --build=x86_64-linux-gnu
         make CROSS_COMPILE=arm-wince-
